@@ -12,6 +12,7 @@ require 'uri'
 require 'pathname'
 require 'httparty'
 require 'dotenv'
+require 'google_places'
 Dotenv.load
 
 require 'pg'
@@ -25,6 +26,23 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 require 'faker'
+
+
+%w(client location rectangle prediction request spot error photo).each do |file|
+  require File.join(File.dirname(__FILE__), 'google_places', file)
+end
+
+module GooglePlaces
+  class << self
+
+    attr_accessor :api_key
+
+    def configuration
+      yield self
+    end
+
+  end
+end
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))

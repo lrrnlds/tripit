@@ -11,6 +11,7 @@ gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
 
 gem 'rake'
+gem 'iconv', '~> 1.0', '>= 1.0.4'
 
 gem 'bcrypt'
 gem 'shotgun'
@@ -18,6 +19,8 @@ gem 'pry'
 gem 'awesome_print'
 
 gem 'faker'
+gem 'google_places'
+
 
 group :test do
   gem 'shoulda-matchers'
