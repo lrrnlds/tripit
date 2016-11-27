@@ -18,6 +18,7 @@ Dotenv.load
 require 'pg'
 require 'active_record'
 require 'logger'
+require 'pry'
 
 require 'bcrypt'
 
@@ -28,9 +29,9 @@ require 'erb'
 require 'faker'
 
 
-%w(client location rectangle prediction request spot error photo).each do |file|
-  require File.join(File.dirname(__FILE__), 'google_places', file)
-end
+# %w(client location rectangle prediction request spot error photo).each do |file|
+#   require File.join(File.dirname(__FILE__), 'google_places', file)
+# end
 
 module GooglePlaces
   class << self
