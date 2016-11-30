@@ -1,0 +1,17 @@
+<h1>Plan Your Trip!</h1>
+
+<% if logged_in? %>
+<p>
+  you are logged in
+  <a href='/iternaries/new'>Create a new one</a>
+  <% current_user.iternary.each do |iternary| %>
+  <p>
+    <a href="iternaries/<%= iternary.id %>"> <%= iternary.name %>
+  </p></a>
+  <% end %>
+</p>
+<% else %>
+<p>
+  nope [to be filled with something else]
+</p>
+<%end%>
