@@ -1,5 +1,5 @@
 class Iternary < ActiveRecord::Base
   # Remember to create a migration!
   belongs_to :user
-  has_many :excursion
+  has_many :location
 end

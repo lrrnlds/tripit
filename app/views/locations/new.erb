@@ -1,12 +1,15 @@
 <form action="/locations" method="post">
   <label for="location[name]">Location Name / Type:</label>
-  <input type='text' name="name" placeholder="Location Name Here" />
+  <input type='text' name="location[name]" placeholder="Location Name Here" />
   <br />
-  <label for="iternary[description]">City Here:</label>
-  <input type='text' name="city" placeholder="City Here" />
+  <label for="location[city]">City Here:</label>
+  <input type='text' name="location[city]" placeholder="City Here" />
   <br />
-  <label for="iternary[description]">State/Country Here:</label>
-  <input type='text' name="state" placeholder="State Here" />
+  <label for="location[state]">State/Country Here:</label>
+  <input type='text' name="location[state]" placeholder="State Here" />
+  <br />
+  <label for="location[description]">Description Here:</label>
+  <input type='text' name="location[description]" placeholder="Description Here" />
   <br />
   <input type="submit" value="Submit" />
 </form>
