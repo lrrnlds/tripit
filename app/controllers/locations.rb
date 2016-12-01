@@ -29,6 +29,14 @@ put '/locations/:id' do
   redirect "/locations/#{location.id}"
 end
 
+delete '/locations/:id' do
+  @location = Location.find(params[:id])
+  iternary_id = @location.iternary_id
+  @location.destroy
+
+  redirect "iternaries/#{iternary_id}"
+end
+
 # post '/locations' do
 #   @api_key = 'AIzaSyBrlI0pspDqOZ8sf4Dr25WtO1vp3C_Jx-E'
 #   client = GooglePlaces::Client.new(@api_key)

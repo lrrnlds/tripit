@@ -1,2 +1,11 @@
 <%= @location.name %>
+
+
 <%= @location.city %>
+
+
+<a href="/locations/<%= @location.id %>/edit">Edit me!</a>
+<form action="/locations/<%= @location.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>

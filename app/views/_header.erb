@@ -1,10 +1,30 @@
-<% if current_user %>
-  <a href="/users/<%= current_user.id %> ">Profile Page</a>
-  <form action="/sessions" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Logout">
-  </form>
-<% else %>
-  <a href="/sessions/new">Login</a>
-  <a href="/users/new">Register</a>
-<% end %>
+<nav>
+  <div class="nav-wrapper">
+    <ul class="right hide-on-med-and-down">
+      <% if current_user %>
+        <li>
+          <a href="/users/<%= current_user.id %> ">Profile Page</a>
+        </li>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <form action="/sessions" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input class="btn" type="submit" value="Logout">
+          </form>
+        </li>
+      <% else %>
+        <li>
+          <a href="/sessions/new">Login</a>
+        </li>
+        <li>
+          <a href="/users/new">Register</a>
+        </li>
+        <li>
+          <a href="/">Home</a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

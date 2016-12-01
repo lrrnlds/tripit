@@ -1,0 +1,16 @@
+<form method="post" action="/locations/<%=@location.id%>">
+  <input type="hidden" name="_method" value="put">
+  <label for="location[name]">Location Name / Type:</label>
+  <input type='text' required name="location[name]" value="<%= @location.name %>" />
+  <br />
+  <label for="location[city]">City Here:</label>
+  <input type='text' required name="location[city]" value="<%= @location.city %>" />
+  <br />
+  <label for="location[state]">State/Country Here:</label>
+  <input type='text' required name="location[state]" value="<%= @location.state %>" />
+  <br />
+  <label for="location[description]">Description Here:</label>
+  <textarea rows="2" cols="50" name="location[description]" value="<%= @location.description %>" /></textarea>
+  <br />
+  <input type="submit" value="Submit" />
+</form>

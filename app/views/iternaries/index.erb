@@ -2,11 +2,15 @@
 
 <% if logged_in? %>
 <p>
-  you are logged in
-  <a href='/iternaries/new'>Create a new one</a>
+  <a href='/iternaries/new' class="btn btn-primary">Create a new one</a>
   <% current_user.iternary.each do |iternary| %>
   <p>
+    <br />
     <a href="iternaries/<%= iternary.id %>"> <%= iternary.name %>
+      <p>Description: 
+        <%= iternary.description %>
+        <br />
+      </p>
   </p></a>
   <% end %>
 </p>
