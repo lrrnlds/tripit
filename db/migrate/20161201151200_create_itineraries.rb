@@ -1,6 +1,6 @@
-class CreateIternaries < ActiveRecord::Migration
+class CreateItineraries < ActiveRecord::Migration
   def change
-    create_table :iternaries do |t|
+    create_table :itineraries do |t|
       t.integer :user_id
       t.string :name
       t.string :description

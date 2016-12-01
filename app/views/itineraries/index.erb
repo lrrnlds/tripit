@@ -1,0 +1,23 @@
+<h1>Plan Your Trip!</h1>
+
+<% if logged_in? %>
+<p>
+  <a href='/itinerary/new' class="btn btn-primary">Create a new one</a>
+  <% current_user.itinerary.each do |itinerary| %>
+    <br />
+    <div class="box">
+      <a href="itinerary/<%= itinerary.id %>"> <%= itinerary.name %>
+      <p>Description:
+        <%= itinerary.description %>
+      <br />
+      </p>
+      </a>
+    </div>
+
+  <% end %>
+</p>
+<% else %>
+<p>
+  nope [to be filled with something else]
+</p>
+<%end%>

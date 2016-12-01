@@ -7,8 +7,8 @@
   </p>
 <% end %>
 
-<h3>Iternaries:</h3>
-<% current_user.iternary.each do |trip| %>
-<a href="/iternaries/<%=trip.id%>"><%= trip.name  %></a>
+<h3>itineraries:</h3>
+<% current_user.itinerary.each do |trip| %>
+<a href="/itineraries/<%=trip.id%>"><%= trip.name  %></a>
 <br />
 <% end %>

@@ -1,17 +1,23 @@
-<%= @iternary.name %>
+<h1><%= @itinerary.name %></h1>
 <br />
 <br />
-<% @iternary.location.each do |location| %>
-<a href="/locations/<%=location.id %>"><%= location.name %></a>
-<br />
-<br />
-<% end %>
-<br />
-<br />
+<h2>List of Places:</h2>
+<ul>
+  <% @itinerary.location.each do |location| %>
+  <li class="itinerary_locations">
+    <br />
+    <a href="/locations/<%=location.id %>"><%= location.name %></a>
+    <br />
+  </li>
+  <% end %>
+  <br />
+  <br />
+</ul>
+
 <!-- <a href='/locations/new'></a> -->
 Add a new place!
 <br />
-<form action="/iternaries/<%=@iternary.id%>/locations/new" method="post">
+<form action="/itineraries/<%=@itinerary.id%>/locations/new" method="post">
   <label for="location[name]">Location Name / Type:</label>
   <input type='text' name="location[name]" placeholder="Location Name Here" />
   <br />

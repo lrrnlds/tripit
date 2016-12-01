@@ -11,3 +11,19 @@ html {
   /*font-family: GillSans, Calibri, Trebuchet, sans-serif;*/
   font-family: 'Cutive Mono', monospace;
 }
+
+.box {
+    /*display: inline-block;*/
+    /*position: relative;*/
+    margin: 5%;;
+    border-style: solid;
+    /*float: left;*/
+    width: 23%;
+    height: 100%;
+}
+
+.itinerary_locations {
+    border-style: solid;
+    width : 23%;
+    margin: 2%;
+}

@@ -31,10 +31,10 @@ end
 
 delete '/locations/:id' do
   @location = Location.find(params[:id])
-  iternary_id = @location.iternary_id
+  itinerary_id = @location.itinerary_id
   @location.destroy
 
-  redirect "iternaries/#{iternary_id}"
+  redirect "itineraries/#{itinerary_id}"
 end
 
 # post '/locations' do

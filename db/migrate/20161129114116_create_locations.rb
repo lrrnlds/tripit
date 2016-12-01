@@ -7,7 +7,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :state
       t.string :photo_array
       t.string :description
-      t.integer :iternary_id
+      t.integer :itinerary_id
       t.integer :user_id
 
       t.timestamps null:false

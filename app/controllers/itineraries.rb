@@ -1,47 +1,47 @@
-get '/iternaries' do
-  erb :'/iternaries/index'
+get '/itineraries' do
+  erb :'/itineraries/index'
 end
 
-get'/iternaries/new' do
+get'/itineraries/new' do
   if logged_in?
-    erb :'iternaries/new'
+    erb :'itineraries/new'
   else
     redirect "sessions/new"
   end
 end
 
 
-post '/iternaries' do
+post '/itineraries' do
   if logged_in?
-    new_iternary = current_user.iternary.new(params[:iternary])
-    if new_iternary.save
-      redirect "iternaries/#{new_iternary.id}"
+    new_itinerary = current_user.itinerary.new(params[:itinerary])
+    if new_itinerary.save
+      redirect "itineraries/#{new_itinerary.id}"
     else
-      erb :'iternaries/new'
+      erb :'itineraries/new'
     end
   else
     redirect "sessions/new"
   end
 end
 
-get '/iternaries/:id' do
+get '/itineraries/:id' do
   if logged_in?
-    @iternary = Iternary.find(params[:id])
-    erb :'iternaries/show'
+    @itinerary = itinerary.find(params[:id])
+    erb :'itineraries/show'
   else
     redirect "sessions/new"
   end
 end
 
-post '/iternaries/:id/locations/new' do
+post '/itineraries/:id/locations/new' do
   p params.inspect
   if logged_in?
     new_location = Location.new(params[:location])
     p new_location
-    new_location.iternary_id = params[:id]
+    new_location.itinerary_id = params[:id]
     new_location.user_id = current_user.id
       if new_location.save
-        redirect "/iternaries/#{new_location.iternary_id}"
+        redirect "/itineraries/#{new_location.itinerary_id}"
       else
         @erros = new_location.errors.full_message
       end
@@ -50,6 +50,8 @@ post '/iternaries/:id/locations/new' do
       redirect "/sessions/new"
   end
 end
+
+# get '/it'
 
 # get '/restaurants/:id/edit' do
 #   @rs = Restaurant.find(params[:id])

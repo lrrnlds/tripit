@@ -1,4 +1,4 @@
-class Iternary < ActiveRecord::Base
+class Itinerary < ActiveRecord::Base
   # Remember to create a migration!
   belongs_to :user
   has_many :location

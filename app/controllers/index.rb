@@ -13,7 +13,7 @@
 # end
 #
 get '/' do
-  redirect '/iternaries'
+  redirect '/itineraries'
 end
 
 get '/session-viewer' do

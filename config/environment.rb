@@ -27,6 +27,7 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 require 'faker'
+# require 'rack-test'
 
 
 # %w(client location rectangle prediction request spot error photo).each do |file|
