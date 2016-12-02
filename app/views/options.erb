@@ -11,7 +11,8 @@
     <br />
   Address: <%= place.formatted_address %>
     <br />
-  <%= place.place_id %>
+
+  <img src="<%= place.photos[0].fetch_url(800) %>">
     <br />
     <br />
   <% end %>
