@@ -1,0 +1,40 @@
+<div class="container">
+  <h1><%= @itinerary.name %></h1>
+  <br />
+  <h3>Description:</h3>
+  <p>
+    <%= @itinerary.description %>
+  </p>
+  <br />
+  <h2>List of Places:</h2>
+  <ul>
+    <% @itinerary.location.each do |location| %>
+    <li>
+      <br />
+      <a href="/locations/<%=location.id %>"><%= location.name %></a>
+      <br />
+    </li>
+    <% end %>
+    <br />
+    <br />
+  </ul>
+
+  <!-- <a href='/locations/new'></a> -->
+  Add a new place!
+  <br />
+  <form action="/itineraries/<%=@itinerary.id%>/locations/new" method="post">
+    <label for="location[name]">Location Name / Type:</label>
+    <input type='text' name="location[name]" placeholder="Location Name Here" />
+    <br />
+    <label for="location[city]">City Here:</label>
+    <input type='text' name="location[city]" placeholder="City Here" />
+    <br />
+    <label for="location[state]">State/Country Here:</label>
+    <input type='text' name="location[state]" placeholder="State Here" />
+    <br />
+    <label for="location[description]">Description Here:</label>
+    <textarea rows="4" cols="50" name="location[description]" placeholder="Description Here" /></textarea>
+    <br />
+    <input type="submit" value="Submit" />
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Plan Your Trip!</h1>
+
+  <% if logged_in? %>
+    <p>
+      <a href='/itineraries/new' class="btn btn-primary">Create a new one</a>
+      <a href='/google_places' class="btn btn-primary">Find a spot!</a>
+      <h3>Trips:</h3>
+      <% current_user.itinerary.each do |itinerary| %>
+        <br />
+        <div class="box">
+          <h4>Title: <a href="itineraries/<%= itinerary.id %>"> <%= itinerary.name %></a></h4>
+          <br />
+          <p>Description: <%= itinerary.description %><br /></p>
+          <a href='/itineraries/<%= itinerary.id %>/edit' class="btn btn-primary"> Edit </a>
+          <br />
+          <br />
+          <form action="/itineraries/<%= itinerary.id %>" method="post"><input type="hidden" name="_method" value="delete"><input class="btn" type="submit" value="Delete"></form>
+        </div>
+      <% end %>
+    </p>
+  <% else %>
+  <h4>Login to plan some trips!</h4>
+  <a href='/google_places' class="btn btn-primary">Find a spot!</a>
+  <%end%>
+</div>

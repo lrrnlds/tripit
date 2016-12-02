@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Options</h1>
+    <br />
+  <a href='/google_places' class="btn btn-primary">Find a spot!</a>
+    <br />
+    <br />
+  <% @options.each do |place| %>
+  Name: <%= place.name %>
+    <br />
+  Rating: <%= place.rating %>
+    <br />
+  Address: <%= place.formatted_address %>
+    <br />
+  <%= place.place_id %>
+    <br />
+    <br />
+  <% end %>
+</div>
+
+
+<!-- check boxes:
+place id
+<input type = 'hidden', :name = 'foo', value = 'f'>
+<input type = 'checkbox', name = 'foo', value = 't'> -->
