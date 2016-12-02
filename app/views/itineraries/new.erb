@@ -1,11 +1,12 @@
-
-
-<form action="/itineraries" method="post">
-  <label for="itinerary[name]">itinerary Name:</label>
-  <input type='text' name="itinerary[name]" placeholder="itinerary Name Here" />
-  <br />
-  <label for="itinerary[description]">itinerary Description:</label>
-  <textarea type='text' name="itinerary[description]" placeholder="itinerary Description Here" class="materialize-textarea"></textarea>
-  <br />
-  <input type="submit" value="Submit" />
-</form>
+<div class="container">
+  <h1>New Itinerary</h1>
+  <form action="/itineraries" method="post">
+    <label for="itinerary[name]">Itinerary Name:</label>
+    <input type='text' name="itinerary[name]" placeholder="Itinerary Name Here" />
+    <br />
+    <label for="itinerary[description]">Itinerary Description:</label>
+    <textarea type='text' name="itinerary[description]" placeholder="Itinerary Description Here" class="materialize-textarea"></textarea>
+    <br />
+    <input type="submit" value="Submit" />
+  </form>
+</div>

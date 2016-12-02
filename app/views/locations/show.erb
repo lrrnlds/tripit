@@ -1,11 +1,19 @@
-<%= @location.name %>
+<div class="container">
+  <h1><%= @location.name %></h1>
 
 
-<%= @location.city %>
+  <h5>City: <%= @location.city %></h5>
+
+  <p>
+    Description: <%= @location.description %>
+  </p>
 
 
-<a href="/locations/<%= @location.id %>/edit">Edit me!</a>
-<form action="/locations/<%= @location.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="delete">
-</form>
+  <a href="/locations/<%= @location.id %>/edit" class="btn">Edit me!</a>
+  <br />
+  <br />
+  <form action="/locations/<%= @location.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" class="btn" value="delete">
+  </form>
+</div>

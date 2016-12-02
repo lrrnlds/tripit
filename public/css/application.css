@@ -15,15 +15,21 @@ html {
 .box {
     /*display: inline-block;*/
     /*position: relative;*/
-    margin: 5%;;
+    margin: 5%;
     border-style: solid;
+    padding: 5%;
     /*float: left;*/
-    width: 23%;
-    height: 100%;
+    width: 100%;
+    height: 75%;
 }
 
 .itinerary_locations {
     border-style: solid;
     width : 23%;
     margin: 2%;
+}
+
+.page-wrap {
+     width: 800px;
+     margin: 0 auto;
 }

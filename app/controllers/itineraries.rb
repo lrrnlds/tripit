@@ -12,6 +12,7 @@ end
 
 
 post '/itineraries' do
+  p current_user
   if logged_in?
     new_itinerary = current_user.itinerary.new(params[:itinerary])
     if new_itinerary.save
@@ -26,7 +27,7 @@ end
 
 get '/itineraries/:id' do
   if logged_in?
-    @itinerary = itinerary.find(params[:id])
+    @itinerary = Itinerary.find(params[:id])
     erb :'itineraries/show'
   else
     redirect "sessions/new"
@@ -51,7 +52,23 @@ post '/itineraries/:id/locations/new' do
   end
 end
 
-# get '/it'
+get '/itineraries/:id/edit' do
+  @itinerary = Itinerary.find(params[:id])
+  erb :'/itineraries/edit'
+end
+
+put '/itineraries/:id' do
+  itinerary = Itinerary.find(params[:id])
+  itinerary.update_attributes(params[:itinerary])
+  redirect "/itineraries/#{itinerary.id}"
+end
+
+delete '/itineraries/:id' do
+  @itinerary = Itinerary.find(params[:id])
+  @itinerary.destroy
+
+  redirect '/itineraries'
+end
 
 # get '/restaurants/:id/edit' do
 #   @rs = Restaurant.find(params[:id])

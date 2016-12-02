@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Edit Itinerary</h1>
+  <form action="/itineraries/<%= @itinerary.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <label for="itinerary[name]">Itinerary Name:</label>
+    <input type='text' name="itinerary[name]" value="<%= @itinerary.name %>" />
+    <br />
+    <label for="itinerary[description]">Itinerary Description:</label>
+    <textarea type='text' name="itinerary[description]" value="<%= @itinerary.description %>" class="materialize-textarea"></textarea>
+    <br />
+    <input type="submit" value="Submit" />
+  </form>
+</div>
