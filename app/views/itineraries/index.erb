@@ -4,7 +4,7 @@
   <% if logged_in? %>
     <p>
       <a href='/itineraries/new' class="btn btn-primary">Create a new one</a>
-      <a href='/itineraries/new' class="btn btn-primary">Find a spot!</a>
+      <a href='/google_places' class="btn btn-primary">Find a spot!</a>
       <h3>Trips:</h3>
       <% current_user.itinerary.each do |itinerary| %>
         <br />
@@ -21,6 +21,6 @@
     </p>
   <% else %>
   <h4>Login to plan some trips!</h4>
-  <a href='/itineraries/new' class="btn btn-primary">Find a spot!</a>
+  <a href='/google_places' class="btn btn-primary">Find a spot!</a>
   <%end%>
 </div>

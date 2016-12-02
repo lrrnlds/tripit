@@ -69,38 +69,3 @@ delete '/itineraries/:id' do
 
   redirect '/itineraries'
 end
-
-# get '/restaurants/:id/edit' do
-#   @rs = Restaurant.find(params[:id])
-#   erb :'/restaurants/edit'
-# end
-#
-#
-# put '/restaurants/:id' do
-#   restaurant = Restaurant.find(params[:id])
-#   restaurant.update_attributes(params[:restaurant])
-#   redirect "/restaurants/#{restaurant.id}"
-# end
-#
-#
-# delete '/restaurants/:id' do
-#   @rest = Restaurant.find(params[:id])
-#   @rest.destroy
-#
-#   redirect '/restaurants'
-# end
-#
-# post '/restaurants/:id/reviews/new' do
-#   if logged_in?
-#   new_review = Review.new(params[:review])
-#   new_review.restaurant_id = params[:id]
-#   new_review.user_id = current_user.id
-#     if new_review.save
-#       redirect "/restaurants/#{new_review.restaurant_id}"
-#     else
-#       @errors = new_review.errors.full_message
-#     end
-#   else
-#     redirect "/nope"
-#   end
-# end
