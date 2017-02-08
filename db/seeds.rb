@@ -15,3 +15,4 @@ locations = 20.times.map do
                     :itinerary_id => rand(1..20),
                     :user_id => rand(1..20))
 end
+
