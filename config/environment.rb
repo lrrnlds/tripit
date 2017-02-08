@@ -34,6 +34,7 @@ require 'faker'
 #   require File.join(File.dirname(__FILE__), 'google_places', file)
 # end
 
+
 module GooglePlaces
   class << self
 
