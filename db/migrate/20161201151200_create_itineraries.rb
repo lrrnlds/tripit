@@ -9,3 +9,4 @@ class CreateItineraries < ActiveRecord::Migration
     end
   end
 end
+
